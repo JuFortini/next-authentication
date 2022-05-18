@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { AuthContext } from "../contexts/AuthContext";
+import { api } from "../services/api";
 
 import styles from "../styles/Home.module.scss";
 
@@ -8,7 +9,9 @@ export default function Dashboard() {
   
   const { user } = useContext(AuthContext);
 
-  console.log(user);
+  useEffect(() => {
+    api.get("/me").then(response => console.log(response))
+  }, [])
 
   return (
     <div className={styles.container}>
