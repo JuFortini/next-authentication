@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { parseCookies, setCookie } from "nookies";
+import { signOut } from "../contexts/AuthContext";
 
 interface DataError {
   code: string;
@@ -59,7 +60,7 @@ api.interceptors.response.use(response => {
         failedRequestQueue.push({
           onSuccess: (token: string) => {
             originalConfig.headers["Authorization"] = `Bearer ${token}`
-            
+
             resolve(api(originalConfig));
           },
           onFailure: (err: AxiosError) => {
@@ -69,7 +70,10 @@ api.interceptors.response.use(response => {
       })
 
     } else {
-      //deslogar usuário
+      signOut();
     }
   }
+
+  return Promise.reject(error);
+
 })
