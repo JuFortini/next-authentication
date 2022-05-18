@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  height: 100vh;
+  background: #01052e;
+  color: yellowgreen;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  input {
+    padding: 0 1rem;
+    background: #01052e;
+    height: 2rem;
+    border: 1px solid yellowgreen;
+    border-radius: 5px;
+    color: azure;
+
+    &::placeholder {
+      color: darkgray;
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+    height: 2rem;
+    padding: 0 2rem;
+    background: yellowgreen;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+
