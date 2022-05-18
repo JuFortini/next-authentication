@@ -32,8 +32,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>();
   const isAuthenticated = !!user;
 
-  console.log('oi fora');
-
   useEffect(() => {
     const { "nextauth.token": token } = parseCookies();
 
