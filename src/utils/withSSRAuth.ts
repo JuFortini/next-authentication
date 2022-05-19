@@ -31,6 +31,5 @@ export function withSSRAuth<P>(fn: GetServerSideProps<P>) {
         }
       }
     }
-
   }
 }

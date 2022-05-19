@@ -47,6 +47,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         const { email, permissions, roles } = response.data;
 
         setUser({ email, permissions, roles });
+      }).catch(() => {
+        signOut();
       })
     }
   }, []);
