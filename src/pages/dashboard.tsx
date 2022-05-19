@@ -10,7 +10,7 @@ import styles from "../styles/Home.module.scss";
 
 export default function Dashboard() {
   
-  const { user } = useContext(AuthContext);
+  const { user, signOut } = useContext(AuthContext);
 
   useEffect(() => {
     api.get("/me").then(response => console.log('dashboard', response))
@@ -23,6 +23,7 @@ export default function Dashboard() {
       <Can permissions={['metrics.list']}>
         <p>METRICS</p>
       </Can>
+      <button onClick={signOut}>Sair</button>
     </div>
   );
 }
