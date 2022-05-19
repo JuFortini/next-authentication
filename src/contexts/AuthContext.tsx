@@ -73,8 +73,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
       
       setUser({ email, permissions, roles });
       
-      console.log('oi signIn');
-      
       Router.push("/dashboard");
       
       api.defaults.headers["Authorization"] = `Bearer ${token}`;
